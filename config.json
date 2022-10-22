@@ -1,0 +1,19 @@
+{   
+    "log": "true",
+    "log_path": "/home/pickles/ytd/log",
+
+    "playlists": [
+        {
+            "link": "https://www.youtube.com/playlist?list=YOURPLAYLISTLINK",
+            "type": "mp3",
+            "path": "/home/pickles/music",
+            "stream_id": 140
+        },
+        {
+            "link": "https://www.youtube.com/playlist?list=YOURPLAYLISTLINK",
+            "type": "mp4",
+            "path": "/home/pickles/videos",
+            "stream_id": 22
+        }
+    ]
+}
