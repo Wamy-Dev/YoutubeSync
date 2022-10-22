@@ -15,6 +15,8 @@ With multithreading
 
 `log_path` location for log files (A new file is created for each run, with date and time as name)
 
+`delay` Timeout between playlists
+
 `playlists` Here you can specify multiple playlist
 
 `link` Link from the playlist
@@ -30,7 +32,9 @@ For example:
 ```json
 {   
     "log": "true",
-    "log_path": "/home/pickles/ytd/logs",
+    "log_path": "/home/pickles/ytd/log",
+
+    "delay": 10,
 
     "playlists": [
         {
