@@ -1,7 +1,7 @@
 import json, re, os, threading
 from pytube import Playlist, YouTube
 from datetime import datetime
-
+from time import sleep
 
 
 def logger(log):
@@ -31,7 +31,7 @@ Info: {}
 """.format(log["name"], log["pl"], log["path"], log["found"], log["downloaded"], log["downloaded_info"]))
 
     except Exception as e:
-        print(e)
+        print(f'Exception occurred: {e}')
 
 
 
@@ -48,7 +48,7 @@ def yt_download(link, type, path, vid_file, stream_id):
             os.rename(video, vid_file)
 
     except Exception as e:
-        print(e)
+        print(f'Exception occurred: {e}')
 
 
 
@@ -107,7 +107,7 @@ def go(link, type, path, stream_id):
                 })
 
     except Exception as e:
-        print(e)
+        print(f'Exception occurred: {e}')
 
 
 
@@ -123,6 +123,7 @@ if __name__ == "__main__":
         # start check/download
         for pl in config["playlists"]:
             threading.Thread(target=go, args=(pl["link"], pl["type"], pl["path"], pl["stream_id"])).start()
+            sleep(config["delay"])
 
     except Exception as e:
-        print(e)
+        print(f'Exception occurred: {e}')
