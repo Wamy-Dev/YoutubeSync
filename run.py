@@ -4,31 +4,32 @@ from datetime import datetime
 from time import sleep
 
 
+
 def logger(log):
     try:
         logFile = config["log_path"] + "/" + dt[0] + ".log"
 
         if not os.path.isfile(logFile):
             with open(logFile, "w+") as f:
-                f.write("""Name: {}
-Link: {}
-Path: {}
-Found: {}
-Downloaded: {}
-Info: {}
+                f.write(f"""Name: {log["name"]}
+Link: {log["pl"]}
+Path: {log["path"]}
+Found: {log["found"]}
+Downloaded: {log["downloaded"]}
+Info: {log["downloaded_info"]}
 \n
-""".format(log["name"], log["pl"], log["path"], log["found"], log["downloaded"], log["downloaded_info"]))
+""")
 
         else:
             with open(logFile, "a") as f:
-                f.write("""Name: {}
-Link: {}
-Path: {}
-Found: {}
-Downloaded: {}
-Info: {}
+                f.write(f"""Name: {log["name"]}
+Link: {log["pl"]}
+Path: {log["path"]}
+Found: {log["found"]}
+Downloaded: {log["downloaded"]}
+Info: {log["downloaded_info"]}
 \n
-""".format(log["name"], log["pl"], log["path"], log["found"], log["downloaded"], log["downloaded_info"]))
+""")
 
     except Exception as e:
         print(f'Exception occurred: {e}')
