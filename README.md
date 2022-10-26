@@ -7,6 +7,12 @@ Only missing videos are downloaded
 With multithreading
 
 
+### Docker
+
+https://hub.docker.com/r/pickl3s/ytsync
+
+
+
 ### config.json
 
 **paths must be absolute, under windows use `/` instead of `\`, no slash at the end**
