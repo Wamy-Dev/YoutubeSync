@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title translate="no">YTSync</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="darkreader-lock">
+
+    <link rel="icon" href="/appdata/icon.png">
+    <link href="/appdata/style.css" rel="stylesheet">
+
+    <style>preloader {position: absolute;display: block;top: 0;left: 0;width: 100%;height: 100%;z-index: 9;}.loader {position: absolute;width: 40px;height: 40px;margin: auto;left: 0;right: 0;top: 0;bottom: 0;}.loader .circle {position: absolute;width: 38px;height: 38px;opacity: 0;transform: rotate(225deg);animation-iteration-count: infinite;animation-name: orbit;animation-duration: 5.5s;background-color: transparent;}.loader .circle:after {content: '';position: absolute;width: 5px;height: 5px;border-radius: 5px;background: #fff;}.loader .circle:nth-child(2) {animation-delay: 240ms;}.loader .circle:nth-child(3) {animation-delay: 480ms;}.loader .circle:nth-child(4) {animation-delay: 720ms;}.loader .circle:nth-child(5) {animation-delay: 960ms;}@keyframes orbit {0% {transform: rotate(225deg);opacity: 1;animation-timing-function: ease-out;}7% {transform: rotate(345deg);animation-timing-function: linear;}30% {transform: rotate(455deg);animation-timing-function: ease-in-out;}39% {transform: rotate(690deg);animation-timing-function: linear;}70% {transform: rotate(815deg);opacity: 1;animation-timing-function: ease-out;}75% {transform: rotate(945deg);animation-timing-function: ease-out;}76% {transform: rotate(945deg);opacity: 0;}100% {transform: rotate(945deg);opacity: 0;}}</style>
+</head>
+
+<body>
+    <noscript>
+        <noscript_wrp>
+            <noscript_wrp_inr>
+                <h1>JavaScript is required!</h1>
+                <p>Please disable your script blocker or add the page to the whitelist</p>
+            </noscript_wrp_inr>
+        </noscript_wrp>
+    </noscript>
+
+    <preloader>
+        <div class='loader'>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+        </div>
+    </preloader>
+
+    <action_menu>
+        <log_wrp title="Logging">
+            <log_ico></log_ico>
+            <a class="log_status"></a>
+        </log_wrp>
+    
+        <add_pl_open_btn title="Add new Playlist"></add_pl_open_btn>
+    </action_menu>
+    
+    <log>
+        <log_header>
+            <input type="checkbox" id="en_dis_log" /><label for="en_dis_log" title="Enable/Disable logging">Toggle</label>
+            <select id="log_select"></select>
+            <exit_log title="Exit"></exit_log>
+        </log_header>
+        
+        <log_insrt></log_insrt>
+    </log>
+
+    <info_wrp>
+        <delay title="Delay between playlist downloads">
+            <a>
+                Delay:
+                <input type="number" id="delay_time">
+            </a>
+        </delay>
+
+        <spacer_line>|</spacer_line>
+
+        <input type="text" id="cron" title="Change cron job">
+
+        <spacer_line>|</spacer_line>
+
+        <pl_count title="Number of playlists">
+            <pl_count_num></pl_count_num>
+        </pl_count>
+    </info_wrp>
+
+    <add_playlist_wrp>
+        <add_playlist>
+            <add_playlist_exit title="Exit"></add_playlist_exit>
+            <label for="add_playlist_link">Link</label>
+            <input type="text" id="add_playlist_link" placeholder="https://www.youtube.com/playlist?list=playlistid">
+            <br>
+            <label for="add_playlist_folder">Folder</label>
+            <input type="text" id="add_playlist_folder" placeholder="/music">
+            <br>
+            <label for="add_playlist_type">Media type</label>
+            <select id="add_playlist_type">
+              <option value="mp3">mp3</option>
+              <option value="mp4">mp4</option>
+            </select> 
+            <label for="add_playlist_stream_id">Stream id</label>
+            <input type="number" id="add_playlist_stream_id" value="140">
+            <a id="stream_id_help" href="https://pytube.io/en/latest/user/streams.html" target="_blank" title="get information about the stream id's" ></a>
+            
+            <add_playlist_btn>Add Playlist</add_playlist_btn>
+        </add_playlist>
+    </add_playlist_wrp>
+
+    <playlists>
+        <loader>
+            <div class='loader'>
+                <div class='circle'></div>
+                <div class='circle'></div>
+                <div class='circle'></div>
+                <div class='circle'></div>
+                <div class='circle'></div>
+            </div>
+        </loader>
+    </playlists>
+    
+
+    <script src="/appdata/jquery.min.js"></script>
+    <script src="/appdata/script.js"></script>
+</body>
+
+</html>

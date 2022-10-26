@@ -1,0 +1,15 @@
+{
+  "name": "ytsync",
+  "version": "1.0.0",
+  "description": "ytsync",
+  "main": "server.js",
+  "author": "PugPickles",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.18.1",
+    "express-minify": "1.0.0",
+    "helmet": "5.0.2",
+    "cron": "2.1.0"
+  }
+}
