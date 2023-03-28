@@ -9,9 +9,12 @@ It only downloads the missing downloads (unless it is the first run of course, t
 # Docker
 Available at https://hub.docker.com/r/davidisadev/youtubesync
 
-`
-docker pull davidisadev/youtubesync:latest
-`
+```
+docker run \
+-p 8080:8080 \
+-v </downloads/folder>:/downloads \
+davidisadev/youtubesync:latest
+```
 
 # Config.json
 
