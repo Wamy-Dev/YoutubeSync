@@ -1,0 +1,537 @@
+:root {
+    --white: #aaaaaa;
+    --gray: #181818;
+    --gray-light: #242424;
+    --red: #f83d3d;
+    --green: #3df87b;
+    --hl : #02f0fe;
+    --shadow-bg: #00000096;
+    --gradient-blue: linear-gradient(45deg, var(--hl), #4dadfe);
+    --gradient-red: linear-gradient(45deg, #fe4006, #fe4d4d);
+}
+
+/* quicksand-regular - latin */
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/appdata/helper/fonts/quicksand-v30-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('/appdata/helper/fonts/quicksand-v30-latin-regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('/appdata/helper/fonts/quicksand-v30-latin-regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('/appdata/helper/fonts/quicksand-v30-latin-regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('/appdata/helper/fonts/quicksand-v30-latin-regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('/appdata/helper/fonts/quicksand-v30-latin-regular.svg#Quicksand') format('svg');
+    /* Legacy iOS */
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+*:focus {
+    outline: none;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+* {
+    color: var(--white);
+    background-color: var(--gray);
+    font-family: 'Ubuntu', sans-serif;
+    scrollbar-width: none;
+}
+
+
+
+loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+noscript_wrp {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--red);
+    z-index: 9;
+    font-weight: bold;
+}
+
+noscript_wrp_inr {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+noscript_wrp_inr,
+noscript_wrp_inr>* {
+    background-color: transparent;
+    color: var(--gray);
+}
+
+
+
+action_menu {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    right: 0;
+    top: 0;
+    box-shadow: 0 0 10px var(--shadow-bg);
+    padding: 5px;
+    border-bottom-left-radius: 10px;
+}
+
+action_menu,
+action_menu * {
+    background-color: var(--gray-light);
+}
+
+log_wrp {
+    position: relative;
+    width: 45px;
+    cursor: pointer;
+    display: block;
+}
+
+log_ico {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    background-color: var(--white);
+    -webkit-mask-image: url(/appdata/icons/log.svg);
+    mask-image: url(/appdata/icons/log.svg);
+    width: 35px;
+    height: 35px;
+    mask-size: 35px;
+    -webkit-mask-size: 35px;
+}
+
+log_wrp a {
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.log_disabled {
+    background-color: var(--red);
+}
+
+.log_enabled {
+    background-color: var(--green);
+}
+
+add_pl_open_btn {
+    position: relative;
+    margin-top: 10px;
+    background-color: var(--white);
+    -webkit-mask-image: url(/appdata/icons/pl_add.svg);
+    mask-image: url(/appdata/icons/pl_add.svg);
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    mask-size: 45px;
+    -webkit-mask-size: 45px;
+    display: block;
+}
+
+log_wrp:hover log_ico,
+add_pl_open_btn:hover {
+    background-image: var(--gradient-blue);
+}
+
+
+log {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+log_header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 50px;
+    background-color: var(--gray-light);
+    box-shadow: 0 0 10px var(--shadow-bg);
+}
+
+#en_dis_log[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label[for=en_dis_log] {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 64px;
+    height: 30px;
+    background-color: var(--red);
+    display: block;
+    border-radius: 100px;
+}
+
+label[for=en_dis_log]:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--gray);
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+#en_dis_log:checked+label[for=en_dis_log] {
+    background-color: var(--green);
+}
+
+#en_dis_log:checked+label[for=en_dis_log]:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label[for=en_dis_log]:active:after {
+    width: 30px;
+}
+
+#log_select {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+exit_log {
+    position: absolute;
+    right: 10px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-color: var(--red);
+    -webkit-mask-image: url(/appdata/icons/exit.svg);
+    mask-image: url(/appdata/icons/exit.svg);
+    cursor: pointer;
+}
+
+log_insrt {
+    position: absolute;
+    width: 75%;
+    top: 50px;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    overflow: scroll;
+}
+
+
+
+info_wrp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    background-color: var(--gray-light);
+    box-shadow: 0 0 10px var(--shadow-bg);
+    border-bottom-right-radius: 10px;
+    z-index: 1;
+}
+
+info_wrp * {
+    background-color: var(--gray-light);
+}
+
+info_wrp input {
+    margin-bottom: 0;
+}
+
+delay,
+pl_count {
+    cursor: pointer;
+}
+
+#delay_time,
+#cron {
+    box-sizing: border-box;
+    padding: 3px;
+    border: none;
+    border-bottom: 1px solid;
+    width: 50px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#cron {
+    width: 150px;
+}
+
+spacer_line {
+    margin: 5px;
+}
+
+pl_count_num {
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    color: var(--green);
+}
+
+
+
+add_playlist_wrp,
+add_playlist,
+playlists {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: fit-content;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+playlists {
+    height: fit-content;
+}
+
+
+add_playlist_wrp {
+    display: none;
+    width: 100%;
+    z-index: 1;
+    background-color: #181818de;
+}
+
+add_playlist {
+    width: fit-content;
+    height: fit-content;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--shadow-bg);
+    text-align: center;
+}
+
+add_playlist_exit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--red);
+    -webkit-mask-image: url(/appdata/icons/exit.svg);
+    mask-image: url(/appdata/icons/exit.svg);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    mask-size: 24px;
+    -webkit-mask-size: 24px;
+}
+
+input {
+    box-sizing: border-box;
+    padding: 3px;
+    border: none;
+    border-bottom: 1px solid;
+    margin-bottom: 20px;
+}
+
+#add_playlist_link {
+    width: 325px;
+}
+
+#add_playlist_folder {
+    width: 100px;
+}
+
+#add_playlist_type {
+    padding: 2px;
+    border-radius: 5px;
+}
+
+label[for=add_playlist_stream_id] {
+    margin-left: 10px;
+}
+
+#add_playlist_stream_id {
+    width: 50px;
+}
+
+#stream_id_help{
+    position: relative;
+    top: 8px;
+    background-image: var(--gradient-blue);
+    -webkit-mask-image: url(/appdata/icons/help.svg);
+    mask-image: url(/appdata/icons/help.svg);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    mask-size: 24px;
+    -webkit-mask-size: 24px;
+    display: inline-block;
+}
+
+add_playlist_btn {
+    display: block;
+    padding: 5px;
+    border: 1px solid;
+    width: fit-content;
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+add_playlist_btn:hover{
+    background-image: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid transparent;
+}
+
+
+
+pl {
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--shadow-bg);
+    padding: 10px;
+    width: fit-content;
+}
+
+pl,
+pl * {
+    background-color: var(--gray-light);
+}
+
+delete_playlist_btn {
+    background-color: var(--red);
+    -webkit-mask-image: url(/appdata/icons/delete.svg);
+    mask-image: url(/appdata/icons/delete.svg);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    mask-size: 24px;
+    -webkit-mask-size: 24px;
+    display: block;
+    float: right;
+    cursor: pointer;
+}
+
+.playlist_title {
+    font-size: 18px;
+    font-weight: bold;
+    background-image: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pytube_error {
+    opacity: 0 !important;
+}
+
+pl_type {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    mask-size: 24px;
+    -webkit-mask-size: 24px;
+    margin-right: 10px;
+}
+
+.pl_type_mp3 {
+    -webkit-mask-image: url(/appdata/icons/music.svg);
+    mask-image: url(/appdata/icons/music.svg);
+    background-image: var(--gradient-blue);
+}
+
+.pl_type_mp4 {
+    -webkit-mask-image: url(/appdata/icons/video.svg);
+    mask-image: url(/appdata/icons/video.svg);
+    background-image: var(--gradient-red);
+}
+
+.playlist_description  {
+    display: block;
+    margin: 10px;
+    color: #808080;
+}
+
+.pl_link {
+    background-image: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pl_folder_pl_stream {
+    width: fit-content;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.pl_folder_pl_stream th,
+.pl_folder_pl_stream td {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
