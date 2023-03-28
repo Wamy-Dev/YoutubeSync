@@ -1,13 +1,19 @@
-# YTD
+# YoutubeSync
 
-With this small script you can sync your Youtube playlists locally (download videos and save them either as mp3 or mp4)
+*This is a fork originally from https://github.com/PugPickles/YTD. I have no idea why they removed this, but it was something I was looking for my own server so I found the GitHub and reverted their changes where they deleted the entire docker folder.*
 
-Only missing videos are downloaded
+YoutubeSync allows you to easily sync your Youtube playlists locally. They download and save them either as MP3 or MP4 for easy use for Plex or Jellyfin. 
 
-With multithreading
+It only downloads the missing downloads (unless it is the first run of course, then it downloads the entire playlist). Super fast using multithreading.
 
+# Docker
+Available at https://hub.docker.com/r/davidisadev/youtubesync
 
-### config.json
+`
+docker pull davidisadev/youtubesync:latest
+`
+
+# Config.json
 
 **paths must be absolute, under windows use `/` instead of `\`, no slash at the end**
 
@@ -32,21 +38,19 @@ For example:
 ```json
 {   
     "log": "true",
-    "log_path": "/home/pickles/ytd/log",
-
+    "log_path": "/home/wamy/ytd/log",
     "delay": 10,
-
     "playlists": [
         {
             "link": "https://www.youtube.com/playlist?list=YOURPLAYLISTLINK",
             "type": "mp3",
-            "path": "/home/pickles/music",
+            "path": "/home/wamy/music",
             "stream_id": 140
         },
         {
             "link": "https://www.youtube.com/playlist?list=YOURPLAYLISTLINK",
             "type": "mp4",
-            "path": "/home/pickles/videos",
+            "path": "/home/wamy/videos",
             "stream_id": 22
         }
     ]

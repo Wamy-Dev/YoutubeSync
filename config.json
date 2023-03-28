@@ -1,20 +1,18 @@
 {   
     "log": "true",
-    "log_path": "/home/pickles/ytd/log",
-    
+    "log_path": "/home/wamy/ytd/log",
     "delay": 0,
-
     "playlists": [
         {
             "link": "https://www.youtube.com/playlist?list=YOURPLAYLISTLINK",
             "type": "mp3",
-            "path": "/home/pickles/music",
+            "path": "/home/wamy/music",
             "stream_id": 140
         },
         {
             "link": "https://www.youtube.com/playlist?list=YOURPLAYLISTLINK",
             "type": "mp4",
-            "path": "/home/pickles/videos",
+            "path": "/home/wamy/videos",
             "stream_id": 22
         }
     ]
